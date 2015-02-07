@@ -1,0 +1,13 @@
+<%= form_for :recipe, url: create_recipe_path do |f|%>
+  <p>
+    <b><%= f.label :name %></b>  <%= f.text_field :name %>
+  </p>
+  <p>
+    <b><%= f.label :prep_time_in_minutes %></b> <%= f.text_field :prep_time_in_minutes %>
+  </p>
+  <p>
+    <b><%= f.label :servings %></b> <%= f.text_field :servings %>
+  </p>
+
+  <%= f.submit %>
+<% end %>

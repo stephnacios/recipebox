@@ -1,0 +1,19 @@
+development:
+  adapter: mysql
+  database: recipes_development
+  username: root
+  password: <%= ENV['RECIPES_DATABASE_PASSWORD'] %>
+  host: localhost
+test:
+  adapter: mysql
+  database: recipes_test
+  username: root
+  password: <%= ENV['RECIPES_DATABASE_PASSWORD'] %>
+  host: localhost
+production:
+  adapter: mysql
+  database: recipes_production
+  username: root
+  password: <%= ENV['RECIPES_DATABASE_PASSWORD'] %>
+  host: localhost
+
