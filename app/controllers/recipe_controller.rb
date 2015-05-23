@@ -20,8 +20,8 @@ class RecipeController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find_by_id(recipe_id)
-    @heading = @recipe.try(:name)
+    @recipe = Recipe.find(recipe_id)
+    @heading = @recipe.name
   end
 
 private
