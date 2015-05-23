@@ -13,12 +13,15 @@
 
 ActiveRecord::Schema.define(version: 20150207044823) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "recipes", force: :cascade do |t|
-    t.string   "name",                 limit: 255, null: false
-    t.integer  "prep_time_in_minutes", limit: 4,   null: false
-    t.integer  "servings",             limit: 4,   null: false
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.string   "name",                 null: false
+    t.integer  "prep_time_in_minutes", null: false
+    t.integer  "servings",             null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
 end

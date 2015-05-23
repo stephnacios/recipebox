@@ -1,19 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+  host: localhost
+
 development:
-  adapter: mysql
+  <<: *default
   database: recipes_development
-  username: root
-  password: <%= ENV['RECIPES_DATABASE_PASSWORD'] %>
-  host: localhost
+  username: yumyums
+  password: password
 test:
-  adapter: mysql
+  <<: *default
   database: recipes_test
-  username: root
-  password: <%= ENV['RECIPES_DATABASE_PASSWORD'] %>
-  host: localhost
+  username: yumyums
+  password: password
 production:
-  adapter: mysql
+  <<: *default
   database: recipes_production
-  username: root
+  username: yumyums
   password: <%= ENV['RECIPES_DATABASE_PASSWORD'] %>
-  host: localhost
 
