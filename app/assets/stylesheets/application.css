@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+#user_nav {
+  float: right;
+  font-size: 12px;
+}
+
+#flash_notice {
+  color: #33CC33;
+}
+
+#flash_error {
+  color: #FF0000;
+}

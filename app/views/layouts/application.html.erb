@@ -8,6 +8,18 @@
 </head>
 <body>
 
+<%= render partial: 'shared/flash_messages', flash: flash %>
+
+<div id="user_nav">
+  <% if current_user %>
+    <%= link_to "My Account", user_path %> |
+    <%= link_to "Logout", logout_path %>
+  <% else %>
+    <%= link_to "Register", new_user_path %> |
+    <%= link_to "Login", login_path %>
+  <% end %>
+</div>
+
 <%= yield %>
 
 </body>
