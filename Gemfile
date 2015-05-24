@@ -9,6 +9,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'bcrypt'
 gem 'turbolinks'
+gem 'authlogic'
 
 # Use Unicorn as the app server
 gem 'unicorn'
