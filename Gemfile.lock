@@ -110,6 +110,8 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
+    rails4-autocomplete (1.1.1)
+      rails (>= 3.0)
     railties (4.2.1)
       actionpack (= 4.2.1)
       activesupport (= 4.2.1)
@@ -183,6 +185,7 @@ DEPENDENCIES
   pg
   pry
   rails (~> 4.2.0)
+  rails4-autocomplete
   rspec-core
   rspec-expectations
   rspec-its

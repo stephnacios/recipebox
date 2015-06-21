@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'bcrypt'
 gem 'turbolinks'
 gem 'authlogic'
+gem 'rails4-autocomplete'
 
 # Use Unicorn as the app server
 gem 'unicorn'
