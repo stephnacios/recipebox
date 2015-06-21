@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   post 'recipe/create' => 'recipe#create', :as => 'create_recipe'
   get  'recipe/:id'    => 'recipe#show',   :as => 'view_recipe'
 
+  get 'ingredients/autocomplete_ingredient_name'
+
   get 'login'  => 'user_sessions#new',     :as => :login
   get 'logout' => 'user_sessions#destroy', :as => :logout
   resources :user_sessions, only: [:create]
