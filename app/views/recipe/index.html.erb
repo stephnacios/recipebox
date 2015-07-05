@@ -2,5 +2,8 @@
 
 <% @recipes.each do |recipe| %>
   <%= link_to recipe.name, view_recipe_path(recipe.id) %><br>
-
 <% end %>
+
+<p>
+<%= link_to 'Add New Recipe', new_recipe_path %>
+</p>
