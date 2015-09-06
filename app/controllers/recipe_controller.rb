@@ -12,6 +12,7 @@ class RecipeController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
+    @recipe.ingredients = ingredient
 
     if @recipe.save
       redirect_to view_recipe_path(@recipe.id)
@@ -32,6 +33,10 @@ private
   end
 
   def recipe_params
-    params.require(:recipe).permit(:name, :prep_time_in_minutes, :servings)
+    params.require(:recipe).permit(:name, :prep_time_in_minutes, :servings, :ingredient)
+  end
+
+  def ingredient
+    [ Ingredient.find_or_create(:name => params["ingredient"]) ]
   end
 end

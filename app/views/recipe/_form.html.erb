@@ -12,7 +12,7 @@
     <%= form.text_field :servings %>
   </p>
   <p>
-    <b><%= form.label :add_ingredients %></b>
+    <b><%= form.label :ingredient %></b>
     <%= autocomplete_field_tag :ingredient, params[:ingredient], ingredients_autocomplete_ingredient_name_path, {class: "search-query", placeholder: "Ingredients", type: "search"} %>
   </p>
 
