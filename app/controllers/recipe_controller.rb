@@ -11,11 +11,12 @@ class RecipeController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.new(recipe_params)
-    @recipe.ingredients = ingredient
+    form = Recipe::Form.new(recipe_params)
+    use_case = Recipe::Create.new(form)
+    use_case.perform
 
-    if @recipe.save
-      redirect_to view_recipe_path(@recipe.id)
+    if use_case.success?
+      redirect_to view_recipe_path(use_case.recipe_id)
     else
       render 'new'
     end
@@ -33,10 +34,7 @@ private
   end
 
   def recipe_params
-    params.require(:recipe).permit(:name, :prep_time_in_minutes, :servings, :ingredient)
-  end
-
-  def ingredient
-    [ Ingredient.find_or_create(:name => params["ingredient"]) ]
+    params.slice(:name, :prep_time_in_minutes, :servings, :ingredient,
+                 :ingredient_quantity, :ingredient_measurement)
   end
 end

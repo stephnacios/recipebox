@@ -12,6 +12,7 @@ gem 'bcrypt'
 gem 'turbolinks'
 gem 'authlogic'
 gem 'rails4-autocomplete'
+gem 'virtus'
 
 # Use Unicorn as the app server
 gem 'unicorn'

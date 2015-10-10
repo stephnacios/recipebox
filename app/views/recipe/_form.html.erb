@@ -1,20 +1,20 @@
-<%= form_for :recipe, url: create_recipe_path do |form| %>
+<%= form_tag create_recipe_path do |form| %>
   <p>
-    <b><%= form.label :name %></b>
-    <%= form.text_field :name %>
+    <b><%= label_tag :name %></b>
+    <%= text_field_tag :name %>
   </p>
   <p>
-    <b><%= form.label :prep_time_in_minutes %></b>
-    <%= form.text_field :prep_time_in_minutes %>
+    <b><%= label_tag :prep_time_in_minutes %></b>
+    <%= number_field_tag :prep_time_in_minutes %>
   </p>
   <p>
-    <b><%= form.label :servings %></b>
-    <%= form.text_field :servings %>
+    <b><%= label_tag :servings %></b>
+    <%= number_field_tag :servings %>
   </p>
   <p>
-    <b><%= form.label :ingredient %></b>
-    <%= autocomplete_field_tag :ingredient, params[:ingredient], ingredients_autocomplete_ingredient_name_path, {class: "search-query", placeholder: "Ingredients", type: "search"} %>
+    <b><%= label_tag :ingredient %></b>
+    <%= autocomplete_field_tag :ingredient, params[:ingredient], ingredients_autocomplete_ingredient_name_path, {class: "search-query", placeholder: "Ingredients", type: "search"} %><br>
   </p>
 
-  <%= form.submit %>
+  <%= submit_tag("Create") %>
 <% end %>
