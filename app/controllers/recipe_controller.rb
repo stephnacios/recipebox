@@ -34,7 +34,6 @@ private
   end
 
   def recipe_params
-    params.slice(:name, :prep_time_in_minutes, :servings, :ingredient,
-                 :ingredient_quantity, :ingredient_measurement)
+    params.slice(:name, :prep_time_in_minutes, :servings, :ingredient)
   end
 end
