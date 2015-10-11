@@ -26,11 +26,11 @@ private
       :prep_time_in_minutes => form.prep_time_in_minutes,
       :servings             => form.servings
     )
-    @recipe.ingredients = [ create_ingredient ]
+    @recipe.add_ingredient(ingredient)
     @recipe.save!
   end
 
-  def create_ingredient
+  def ingredient
     Ingredient.find_or_create(:name => form.ingredient)
   end
 

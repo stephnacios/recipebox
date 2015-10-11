@@ -16,7 +16,7 @@ RSpec.describe Recipe::Create do
   subject(:perform) { use_case.perform }
 
   describe '#perform' do
-    let(:recipe) { instance_double(Recipe, :ingredients= => nil, :save! => nil) }
+    let(:recipe) { instance_double(Recipe, :add_ingredient => nil, :save! => nil) }
     let(:ingredient) { instance_double(Ingredient) }
 
     before do
@@ -35,7 +35,7 @@ RSpec.describe Recipe::Create do
     end
 
     it 'associates the ingredient with the recipe' do
-      expect(recipe).to receive(:ingredients=).with([ingredient])
+      expect(recipe).to receive(:add_ingredient).with(ingredient)
       perform
     end
 
