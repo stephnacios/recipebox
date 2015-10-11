@@ -1,6 +1,5 @@
 class Recipe::Create
   include ActiveModel::Validations
-  # include Virtus.model
 
   attr_reader :recipe
   delegate :id, :to => :recipe, :prefix => true
